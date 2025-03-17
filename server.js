@@ -6,9 +6,6 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// 3. Middleware to serve static files
-app.use(express.static(path.join(__dirname, "public")));
-
 // 4. Default route
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to My Node.js App on Azure</h1>");
@@ -18,6 +15,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-// 6. Export app for testing (optional)
-module.exports = app;
